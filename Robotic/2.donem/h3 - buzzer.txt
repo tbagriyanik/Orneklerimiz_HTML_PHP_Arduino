@@ -1,0 +1,44 @@
+int C = 262;
+int D = 294;
+int E = 330;
+int F = 349;
+int G = 392;
+int A = 440;
+int B = 494;
+int C_ = 523;
+
+void setup()
+{
+  pinMode(8, OUTPUT);   //Buzzer
+  pinMode(13, OUTPUT);  //TEST ledi
+  Serial.begin(9600);  //konsola yazma
+}
+
+void loop()
+{
+  int ldr = analogRead(A0);
+
+  if (ldr >= 500) {
+    digitalWrite(13, HIGH);
+    tone(8, C);
+    delay(750);
+    digitalWrite(13, LOW);
+    delay(300);
+  } else if (ldr < 500 && ldr > 100) {
+    digitalWrite(13, HIGH);
+    tone(8, D);
+    delay(500);
+    digitalWrite(13, LOW);
+    delay(300);
+  } else {
+    digitalWrite(13, HIGH);
+    tone(8, E);
+    delay(250);
+    digitalWrite(13, LOW);
+    delay(300);
+  }
+
+  noTone(8);     //ses kapama
+
+  Serial.println(ldr); //konsola yaz
+}

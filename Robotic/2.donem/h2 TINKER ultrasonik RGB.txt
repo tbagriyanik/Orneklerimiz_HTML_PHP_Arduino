@@ -1,0 +1,49 @@
+void setup() {
+  Serial.begin(9600); 
+  pinMode(8, OUTPUT); //R
+  pinMode(9, OUTPUT); //B
+  pinMode(10, OUTPUT); //G
+}
+
+void loop() {
+  //Ultrasonic okuma
+  long sure, cm;
+
+  pinMode(6, OUTPUT); //TRIG
+  digitalWrite(6, LOW);
+  delayMicroseconds(2);
+  digitalWrite(6, HIGH);
+  delayMicroseconds(5);
+  digitalWrite(6, LOW);
+
+  pinMode(7, INPUT);  //ECHO
+  sure = pulseIn(7, HIGH);
+
+  cm = (sure) / 29 / 2;
+ 
+  Serial.print(cm);
+  Serial.println("cm Mesafe");  
+ 
+  //RGB için 	
+  int sonuc = map(cm, 1, 300, 1, 4); 
+
+  if(sonuc==1) {
+     digitalWrite(8, HIGH);
+	 digitalWrite(9, LOW);
+     digitalWrite(10, LOW);
+  }else if(sonuc==2) {
+     digitalWrite(8, LOW);
+	 digitalWrite(9, HIGH);
+     digitalWrite(10, LOW);
+  }else if(sonuc==3) {
+     digitalWrite(8, LOW);
+	 digitalWrite(9, LOW);
+     digitalWrite(10, HIGH);
+  }else if(sonuc==4) {
+     digitalWrite(8, HIGH);
+	 digitalWrite(9, HIGH);
+     digitalWrite(10, HIGH);
+  }
+
+  delay(100);
+}

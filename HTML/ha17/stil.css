@@ -1,0 +1,159 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.arkaRenkli {
+    width: 200px;
+    height: 150px;
+    background-color: chocolate;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.genisOrtali {
+    width: 600px;
+    height: 20px;
+    background-color: blanchedalmond;
+    text-align: center;
+    padding: 20px;
+}
+
+.tamEkran {
+    width: 100%;
+    height: 20px;
+    background-color: cadetblue;
+}
+
+.resimliKutu {
+    background-image: url("fare.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 250px;
+    height: 200px;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.ortali {
+    margin: 10px auto;
+    background-color: crimson;
+    width: 200px;
+    height: 200px;
+}
+
+.kapsar {
+    width: 100%;
+    height: 60px;
+    background-color: darkgoldenrod;
+    padding-top: 10px;
+}
+
+.kutu1 {
+    width: 25%;
+    height: 50px;
+    background-color: darkorchid;
+    float: left;
+}
+
+.kutu2 {
+    width: 50%;
+    height: 50px;
+    background-color: rgb(94, 51, 116);
+    float: left;
+}
+
+.kutu3 {
+    width: 25%;
+    height: 50px;
+    background-color: rgb(97, 9, 141);
+    float: left;
+}
+
+.solKose {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: darkseagreen;
+    text-align: center;
+    display: table;
+    z-index: 999;
+}
+
+.solKose span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.birKutuKapsa {
+    width: 250px;
+    height: 150px;
+    background-color: deepskyblue;
+    position: relative;
+}
+
+.kutu {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    position: absolute;
+    top: 20px;
+    right: 60px;
+}
+
+.yesilKutu {
+    width: 200px;
+    height: 50px;
+    background-color: greenyellow;
+    padding-left: 5px;
+    padding-top: 10px;
+    font-weight: 700;
+}
+
+.sariKutu {
+    width: 75px;
+    height: 30px;
+    background-color: yellow;
+    margin-left: 20px;
+    margin-top: -15px;
+}
+
+.menuKapsar {
+    width: 700px;
+    height: 40px;
+    background-color: wheat;
+    color: white;
+}
+
+.menuKapsar ul {
+    list-style-type: none;
+    background-color: mediumseagreen;
+    padding: 0px;
+}
+
+.menuKapsar li {
+    display: inline-block;
+    text-align: center;
+    _width: 120px;
+    height: 30px;
+    padding: 10px;
+}
+
+.menuKapsar li:hover {
+    background-color: rgb(34, 110, 68);
+}
+
+.menuKapsar a {
+    text-decoration: none;
+    display: block;
+    height: max-content;
+    padding-top: 4px;
+    color: white;
+}

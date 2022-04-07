@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ornek</title>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Estonia');
+
+        body {
+            font-family: 'Estonia', 'Comic Sans MS';
+        }
+
+        .resimLink {
+            background-image: url("sprite.png");
+            background-position: 60px 166px;
+            width: 44px;
+            height: 44px;
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .ipucu {
+            visibility: hidden;
+            background-color: rgb(126, 48, 144, 0.5);
+            color: black;
+            padding: 5px;
+            text-align: center;
+            border-radius: 5px;
+            width: 120px;
+            position: absolute;
+            top: 35px;
+            left: 35px;
+            opacity: 0;
+            transition: opacity 1s; /*opaklık değeri 1 saniyede güncellenir*/
+        }
+
+        .resimLink:hover {
+            background-position: 60px 124px;
+        }
+
+            .resimLink:hover .ipucu {
+                visibility: visible;
+                opacity: 1;
+            }
+
+        .kapsar {
+            background: #f3f3f3;
+            width: 300px;
+            height: 300px;
+            margin: 0px auto;
+            display: flex; /*TEK KUTU*/
+            align-items: center;
+            justify-content: center;
+            box-shadow: 10px 10px 10px 1px pink;
+        }
+
+        .ortala {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffd800;
+            width: 80%;
+            height: 80%;
+            font-size: 36px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding-left: 0;
+        }
+
+            .menu ul li {
+                background-color: burlywood;
+                width: 150px;
+                height: 30px;
+                margin-left: 5px;
+                position: relative;
+                border-radius: 5px;
+                display: inline-block;
+                text-align: center;
+                transition-duration: 0.5s;
+            }
+
+                .menu ul li a {
+                    text-decoration: none;
+                    color: brown;
+                    display: block;
+                }
+
+        .menu li ul {
+            display: none;
+            position: absolute;
+            left: -5px;
+            top: 30px;
+            margin-bottom: 5px;
+        }
+
+        .menu li:hover {
+            background-color: cornflowerblue;
+        }
+
+            .menu li:hover ul {
+                display: block;
+            }
+    </style>
+</head>
+<body>
+    <a href="ornek1.html" class="resimLink">
+        <span class="ipucu">Instagrama'a Git</span>
+    </a>
+    Bir şeyler yazıyor. Türkçe harflerde sorun olmasa 
+    <div class="kapsar">
+        <div class="ortala">😜 Bir şeyler</div>
+    </div>
+
+    <div class="menu">
+        <ul>
+            <li><a href="#">Anasayfa</a></li>
+            <li><a href="#">Haberler</a>
+                <ul>
+                    <li><a href="#">Şirketten</a></li>
+                    <li><a href="#">Yurt İçi</a></li>
+                    <li><a href="#">Yurt Dışı</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Ürünler</a>
+                <ul>
+                    <li><a href="#">Tencere</a></li>
+                    <li><a href="#">Tava</a></li>
+                    <li><a href="#">Ütü</a></li>
+                    <li><a href="#">Tost Makinesi </a></li>
+                    <li><a href="#">El Süpürgesi </a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+        It has survived not only five centuries, but also the leap into electronic typesetting, 
+        remaining essentially unchanged. It was popularised in the 1960s with the release of 
+        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
+        software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+</body>
+</html>

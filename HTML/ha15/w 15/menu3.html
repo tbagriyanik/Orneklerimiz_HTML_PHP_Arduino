@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafta 15</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        
+         :root {
+            --animasyonHizi: 0.15s;
+            --opaklik: 0.6;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, rgba(0, 212, 255, 1) 0%, rgb(15, 112, 192) 100%) fixed;
+        }
+        
+        .ustMenu {
+            background-color: white;
+            opacity: var(--opaklik);
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0px;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            box-shadow: 2px 2px 5px gray;
+            transition: all var(--animasyonHizi) ease-in-out;
+            z-index: 999;
+        }
+        
+        .ustMenu:hover {
+            opacity: 1;
+        }
+        
+        .logo {
+            align-self: center;
+            text-align: center;
+            font-size: 2em;
+            width: 250px;
+        }
+        
+        .sagMenu {
+            align-self: center;
+        }
+        
+        .yanMenu {
+            background-color: chocolate;
+            padding: 20px;
+            position: fixed;
+            width: 150px;
+            top: 50px;
+            right: 20px;
+            border-radius: 10px;
+            float: right;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity var(--animasyonHizi) ease-in-out;
+        }
+        
+        .tostIcon {
+            background-color: chocolate;
+            display: none;
+            padding: 10px;
+            position: fixed;
+            cursor: pointer;
+            right: 20px;
+            top: 20px;
+            border-radius: 50%;
+            z-index: 999;
+        }
+        
+        .hamburger2 {
+            display: none;
+        }
+        
+        .icerik {
+            margin-top: 60px;
+            padding: 20px;
+            font-size: 16px;
+            text-align: justify;
+            text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+            transition: all var(--animasyonHizi) ease-in-out;
+        }
+        
+        .resim {
+            margin: 15px;
+            width: 255px;
+            float: left;
+            transition: all var(--animasyonHizi) ease-in-out;
+        }
+        
+        .resim img {
+            border: 10px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            box-shadow: 3px 3px 5px gray;
+            width: 100%;
+        }
+        
+        .yukariGit {
+            background-color: lightgray;
+            display: inline-block;
+            position: fixed;
+            cursor: pointer;
+            bottom: 20px;
+            right: 20px;
+            border-radius: 50%;
+            z-index: 999;
+            opacity: var(--opaklik);
+            transition: all var(--animasyonHizi) ease-in-out;
+        }
+        
+        .yukariGit:hover {
+            background-color: rgb(236, 153, 27);
+            opacity: 1;
+        }
+        
+        .yukariGit a {
+            display: inline-block;
+            padding: 15px;
+            padding-bottom: 18px;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        a:visited {
+            color: darkblue;
+        }
+        
+        #top {
+            margin: 10px;
+        }
+        
+        .yardimEt {
+            position: fixed;
+            left: 20px;
+            bottom: 40px;
+            background-color: lawngreen;
+            opacity: var(--opaklik);
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all var(--animasyonHizi) ease-in-out;
+        }
+        
+        .yardimEt:hover {
+            opacity: 1;
+        }
+        
+        .yardimUcu:before {
+            content: "";
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            border-left: 12px solid lawngreen;
+            border-right: 12px solid transparent;
+            border-top: 12px solid lawngreen;
+            border-bottom: 10px solid transparent;
+            left: 12px;
+            bottom: -14px;
+        }
+        
+        .kutularKapsar {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            clear: both;
+            justify-content: center;
+        }
+        
+        .kutu {
+            background: linear-gradient(180deg, rgb(15, 112, 192) 0%, rgb(0, 212, 255) 100%);
+            width: 275px;
+            text-align: center;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            padding: 10px;
+            transition: all var(--animasyonHizi) ease-in-out;
+        }
+        
+        .kutu:hover {
+            box-shadow: 2px 2px 5px ghostwhite;
+        }
+        
+        .kutu img {
+            filter: grayscale(100%);
+            height: 150px;
+            cursor: pointer;
+            transition: all var(--animasyonHizi) ease-in-out;
+        }
+        
+        .kutu img:hover {
+            filter: grayscale(0%);
+        }
+        
+        .kutu span {
+            font-style: italic;
+        }
+        
+        @media screen and (max-width:600px) {
+            .tostIcon {
+                display: inline-block;
+                transition: all var(--animasyonHizi) ease-in-out;
+            }
+            .tostIcon:hover {
+                border-radius: 5px;
+            }
+            .tostIcon:hover .yanMenu {
+                opacity: 1;
+                visibility: visible;
+            }
+            .tostIcon:hover .hamburger1 {
+                display: none;
+            }
+            .tostIcon:hover .hamburger2 {
+                display: block;
+            }
+            .ustMenu {
+                display: none;
+            }
+            .icerik {
+                font-size: 20px;
+                margin-top: 20px;
+            }
+            .resim {
+                display: block;
+                float: none;
+                width: 80%;
+                margin: 0px auto;
+            }
+            .yardimEt {
+                display: none;
+            }
+            .kutu {
+                width: 100%;
+                margin-right: 0px;
+            }
+            .kutu img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a id="top"></a>
+
+    <div class="ustMenu">
+        <div class="logo">🪐 <a href="menu3.html">Firma Adı</a></div>
+        <div class="sagMenu"><a href="menu3.html">Ana Sayfa</a> | <a href="urunler.html">Ürünler</a> | <a href="arama.html">Arama</a> | <a href="uyelik.html">Üyelik</a></div>
+    </div>
+
+    <div class="tostIcon">
+        <div class="hamburger1">🍔</div>
+        <div class="hamburger2">🥨</div>
+        <div class="yanMenu"><a href="menu3.html">Ana Sayfa</a> <br> <a href="urunler.html">Ürünler</a> <br> <a href="arama.html">Arama</a> <br> <a href="uyelik.html">Üyelik</a></div>
+    </div>
+
+    <div class="icerik">
+        <div class="resim">
+            <img src="https://thispersondoesnotexist.com/image" />
+        </div>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt esse architecto at animi, quibusdam doloremque sunt natus beatae, ab nulla, blanditiis enim veritatis nisi iste rerum? Blanditiis reiciendis fugiat expedita. Recusandae facere odit, ea
+        impedit eligendi suscipit nobis aperiam quasi repellat debitis unde itaque ad! Iusto, pariatur eius ex vel sit qui porro quos voluptatum saepe perferendis recusandae harum nemo. Enim consequuntur voluptate dolorem voluptates accusantium recusandae
+        commodi, distinctio voluptatem numquam ipsum iusto obcaecati repellat veritatis magnam labore. Ut neque vel accusantium ratione. Placeat praesentium consequatur quos, eum vel ipsam. Eligendi quam quasi, assumenda laboriosam qui neque dolorum ipsam
+        voluptatum itaque asperiores? Tempore odio, nam corporis cumque repellendus amet eos illum ipsum minus modi ea neque corrupti, voluptatem, error ipsa. Perferendis, unde provident dolorum reiciendis voluptate deleniti quisquam dicta mollitia! Repellat
+        excepturi at consectetur sequi quidem in quae dolor maxime molestias tempore natus quasi debitis, eligendi corporis, ipsam molestiae dignissimos? Voluptas nihil ea rerum sapiente beatae enim voluptate aliquid consequatur, sunt cupiditate voluptatum
+        quis recusandae! Nesciunt, deleniti adipisci. Eum dolorum labore blanditiis dolorem quas repellat illo? Odit porro ea esse
+        <div class="kutularKapsar">
+            <div class="kutu">
+                <h3>1. Ürün</h3>
+                <a href="urunler.html"><img src="https://thispersondoesnotexist.com/image" />
+                </a><br>
+                <span>Fiyat 99 TL</span></div>
+            <div class="kutu">
+                <h3>2. Ürün</h3>
+                <a href="urunler.html"><img src="https://thispersondoesnotexist.com/image" />
+                </a><br>
+                <span>Fiyat 78 TL</span></div>
+            <div class="kutu">
+                <h3>3. Ürün</h3>
+                <a href="urunler.html"><img src="https://thispersondoesnotexist.com/image" />
+                </a><br>
+                <span>Fiyat 12 TL</span></div>
+            <div class="kutu">
+                <h3>4. Ürün</h3>
+                <a href="urunler.html"><img src="https://thispersondoesnotexist.com/image" />
+                </a><br>
+                <span>Fiyat 1500 TL</span></div>
+            <div class="kutu">
+                <h3>5. Ürün</h3>
+                <a href="urunler.html"><img src="https://thispersondoesnotexist.com/image" />
+                </a><br>
+                <span>Fiyat 3300 TL</span></div>
+        </div>
+    </div>
+
+    <div class="yardimEt yardimUcu">Yardım Almak için ❓</div>
+    <div class="yukariGit"><a href="#top">🔺</a></div>
+</body>
+
+</html>

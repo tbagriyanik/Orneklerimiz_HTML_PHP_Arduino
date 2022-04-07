@@ -1,0 +1,46 @@
+int yanmaSuresi = 500; //başlangıçtaki değer
+
+void setup()
+{
+  pinMode(13, INPUT); //dijital giriş : Buton
+  pinMode(8, OUTPUT); //dijital çıkış : LED
+  pinMode(A0, INPUT); //analog giriş : Sensör
+  Serial.begin(9600); //Seri bağlantı : KLAVYE EKRAN
+}
+
+void loop()
+{ 
+    
+  //Düğme ve sensör bilgilerini al
+  int buton = digitalRead(13);
+  int sensor = analogRead(A0);  
+  
+  //Eğer Seri bağlantı var ise 
+  if(Serial.available()){  
+  	Serial.println ("Hos Geldiniz, 1-9 ile sure ayari");
+    
+    Serial.print ("Yanma suresi: ");    
+  	Serial.println (yanmaSuresi);
+  	Serial.print ("Sensor: ");
+  	Serial.println (sensor);
+  
+    int klavyeden = Serial.read();
+    Serial.print ("Klavye: ");
+    Serial.println(klavyeden);
+    if(klavyeden>=49 && klavyeden<=57) {
+      yanmaSuresi = (klavyeden - 48) * 1000;
+    }    
+  }
+
+  if(sensor>=900){
+    digitalWrite(8, HIGH);
+	delay(yanmaSuresi);
+    digitalWrite(8, LOW);
+    delay(1000);
+  }
+  if(buton){
+      yanmaSuresi = 500; //Reset
+  }
+  
+  delay(100); //çıkış kırpılmasın
+}

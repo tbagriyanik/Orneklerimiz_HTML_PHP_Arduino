@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafta 15</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        
+         :root {
+            --animasyonHizi: 0.15s;
+            --opaklik: 0.6;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .ustMenu {
+            background-color: lightgrey;
+            opacity: var(--opaklik);
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0px;
+            display: flex;
+            align-items: center;
+            float: left;
+            transition: all var(--animasyonHizi) ease-in-out;
+        }
+        
+        .ustMenu:hover {
+            opacity: 1;
+        }
+        
+        .logo {
+            float: left;
+            font-size: 2em;
+        }
+        
+        .sagMenu {
+            float: right;
+            margin-left: 10px;
+        }
+        
+        .yanMenu {
+            background-color: chocolate;
+            padding: 20px;
+            position: fixed;
+            width: 150px;
+            top: 50px;
+            right: 20px;
+            border-radius: 10px;
+            float: right;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity var(--animasyonHizi) ease-in-out;
+        }
+        
+        .tostIcon {
+            background-color: chocolate;
+            display: none;
+            padding: 10px;
+            position: fixed;
+            cursor: pointer;
+            right: 20px;
+            top: 20px;
+            border-radius: 50%;
+            z-index: 999;
+        }
+        
+        .hamburger2 {
+            display: none;
+        }
+        
+        .icerik {
+            margin-top: 60px;
+            padding: 20px;
+            font-size: 16px;
+            text-align: justify;
+        }
+        
+        .resim {
+            margin: 15px;
+            width: 255px;
+            float: left;
+        }
+        
+        .resim img {
+            border: 10px solid rgba(10, 10, 10, 0.1);
+            border-radius: 20px;
+            box-shadow: 5px 5px 8px gray;
+            width: 100%;
+        }
+        
+        .yukariGit {
+            background-color: lightgray;
+            display: inline-block;
+            position: fixed;
+            cursor: pointer;
+            bottom: 20px;
+            right: 20px;
+            border-radius: 50%;
+            z-index: 999;
+            opacity: var(--opaklik);
+            transition: all var(--animasyonHizi) ease-in-out;
+        }
+        
+        .yukariGit:hover {
+            background-color: rgb(236, 153, 27);
+            opacity: 1;
+        }
+        
+        .yukariGit a {
+            display: inline-block;
+            padding: 15px;
+            padding-bottom: 18px;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        a:visited {
+            color: darkblue;
+        }
+        
+        #top {
+            margin: 10px;
+        }
+        
+        .yardimEt {
+            position: fixed;
+            left: 20px;
+            bottom: 40px;
+            background-color: lightskyblue;
+            opacity: var(--opaklik);
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all var(--animasyonHizi) ease-in-out;
+        }
+        
+        .yardimEt:hover {
+            opacity: 1;
+        }
+        
+        .yardimUcu:before {
+            content: "";
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            border-left: 24px solid lightskyblue;
+            border-right: 12px solid transparent;
+            border-top: 12px solid lightskyblue;
+            border-bottom: 20px solid transparent;
+            left: 32px;
+            bottom: -24px;
+        }
+        
+        .kutularKapsar {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            clear: both;
+            justify-content: center;
+        }
+        
+        .kutu {
+            background-color: peachpuff;
+            width: 250px;
+            text-align: center;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            padding: 10px;
+            transition: all var(--animasyonHizi) ease-in-out;
+        }
+        
+        .kutu:hover {
+            background-color: peru;
+            box-shadow: 2px 2px 8px gray;
+        }
+        
+        .kutu img {
+            height: 150px;
+        }
+        
+        .kutu span {
+            font-style: italic;
+        }
+        
+        @media screen and (max-width:600px) {
+            .tostIcon {
+                display: inline-block;
+                transition: all var(--animasyonHizi) ease-in-out;
+            }
+            .tostIcon:hover {
+                border-radius: 5px;
+            }
+            .tostIcon:hover .yanMenu {
+                opacity: 1;
+                visibility: visible;
+            }
+            .tostIcon:hover .hamburger1 {
+                display: none;
+            }
+            .tostIcon:hover .hamburger2 {
+                display: block;
+            }
+            .ustMenu {
+                display: none;
+            }
+            .icerik {
+                font-size: 20px;
+                margin-top: 20px;
+            }
+            .resim {
+                display: block;
+                float: none;
+                width: 80%;
+                margin: 0px auto;
+            }
+            .yardimEt {
+                display: none;
+            }
+            .kutu {
+                width: 100%;
+                margin-right: 0px;
+            }
+            .kutu img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a id="top"></a>
+
+    <div class="ustMenu">
+        <div class="logo">🪐 <a href="menu.html">Firma Adı</a></div>
+        <div class="sagMenu"><a href="menu.html">Ana Sayfa</a> | Ürünler | Arama | Üyelik</div>
+    </div>
+
+    <div class="tostIcon">
+        <div class="hamburger1">➕</div>
+        <div class="hamburger2">❌</div>
+        <div class="yanMenu"><a href="menu.html">Ana Sayfa</a> <br> Ürünler <br> Arama <br> Üyelik</div>
+    </div>
+
+    <div class="icerik">
+        <div class="resim">
+            <img src="https://thispersondoesnotexist.com/image" />
+        </div>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt esse architecto at animi, quibusdam doloremque sunt natus beatae, ab nulla, blanditiis enim veritatis nisi iste rerum? Blanditiis reiciendis fugiat expedita. Recusandae facere odit, ea
+        impedit eligendi suscipit nobis aperiam quasi repellat debitis unde itaque ad! Iusto, pariatur eius ex vel sit qui porro quos voluptatum saepe perferendis recusandae harum nemo. Enim consequuntur voluptate dolorem voluptates accusantium recusandae
+        commodi, distinctio voluptatem numquam ipsum iusto obcaecati repellat veritatis magnam labore. Ut neque vel accusantium ratione. Placeat praesentium consequatur quos, eum vel ipsam. Eligendi quam quasi, assumenda laboriosam qui neque dolorum ipsam
+        voluptatum itaque asperiores? Tempore odio, nam corporis cumque repellendus amet eos illum ipsum minus modi ea neque corrupti, voluptatem, error ipsa. Perferendis, unde provident dolorum reiciendis voluptate deleniti quisquam dicta mollitia! Repellat
+        excepturi at consectetur sequi quidem in quae dolor maxime molestias tempore natus quasi debitis, eligendi corporis, ipsam molestiae dignissimos? Voluptas nihil ea rerum sapiente beatae enim voluptate aliquid consequatur, sunt cupiditate voluptatum
+        quis recusandae! Nesciunt, deleniti adipisci. Eum dolorum labore blanditiis dolorem quas repellat illo? Odit porro ea esse
+        <div class="kutularKapsar">
+            <div class="kutu">
+                <h3>1. Ürün</h3>
+                <img src="https://thispersondoesnotexist.com/image" /><br>
+                <span>Fiyat</span></div>
+            <div class="kutu">
+                <h3>2. Ürün</h3>
+                <img src="https://thispersondoesnotexist.com/image" /><br>
+                <span>Fiyat</span></div>
+            <div class="kutu">
+                <h3>3. Ürün</h3>
+                <img src="https://thispersondoesnotexist.com/image" /><br>
+                <span>Fiyat</span></div>
+            <div class="kutu">
+                <h3>4. Ürün</h3>
+                <img src="https://thispersondoesnotexist.com/image" /><br>
+                <span>Fiyat</span></div>
+            <div class="kutu">
+                <h3>5. Ürün</h3>
+                <img src="https://thispersondoesnotexist.com/image" /><br>
+                <span>Fiyat</span></div>
+        </div>
+    </div>
+
+    <div class="yardimEt yardimUcu">Destek Almak için ❓</div>
+    <div class="yukariGit"><a href="#top">🔺</a></div>
+</body>
+
+</html>

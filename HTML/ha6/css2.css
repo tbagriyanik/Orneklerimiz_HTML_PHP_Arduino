@@ -1,0 +1,24 @@
+﻿body {
+}
+
+.sol-kutu {
+    background-color: dodgerblue;
+    width: 33%;
+    height: 300px;
+    float: left;
+}
+
+.orta_Kutu {
+    background-color: darkblue;
+    width: 33%;
+    height: 150px;
+    float: left;
+    color: white;
+}
+
+.sag_kutu {
+    background-color: cyan;
+    width: 34%;
+    height: 50px;
+    float: left;
+}

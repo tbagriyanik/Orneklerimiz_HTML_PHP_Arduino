@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafta 15</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .ustMenu {
+            background-color: lightgrey;
+            opacity: 0.9;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            float: left;
+            font-size: x-large;
+        }
+        
+        .sagMenu {
+            float: right;
+            margin-left: 10px;
+        }
+        
+        .yanMenu {
+            background-color: chocolate;
+            opacity: 0;
+            padding: 20px;
+            position: fixed;
+            width: 150px;
+            top: 50px;
+            right: 20px;
+            border-radius: 10px;
+            float: right;
+        }
+        
+        .tostIcon {
+            background-color: chocolate;
+            display: none;
+            padding: 10px;
+            position: fixed;
+            cursor: pointer;
+            right: 20px;
+            top: 20px;
+            border-radius: 50%;
+            z-index: 999;
+        }
+        
+        .icerik {
+            margin-top: 60px;
+            padding: 20px;
+            font-size: 16px;
+        }
+        
+        .yukariGit {
+            background-color: lightcoral;
+            display: inline-block;
+            position: fixed;
+            cursor: pointer;
+            bottom: 20px;
+            right: 20px;
+            border-radius: 50%;
+            z-index: 999;
+        }
+        
+        .yukariGit:hover {
+            background-color: hotpink;
+        }
+        
+        .yukariGit a {
+            display: inline-block;
+            padding: 15px;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        #top {
+            margin: 10px;
+        }
+        
+        .yardimEt {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            background-color: lightgreen;
+            opacity: 0.9;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        
+        @media screen and (max-width:500px) {
+            .tostIcon {
+                display: inline-block;
+            }
+            .tostIcon:hover {
+                border-radius: 5px;
+            }
+            .tostIcon:hover .yanMenu {
+                opacity: 1;
+                transition: opacity 0.5s;
+            }
+            .sagMenu {
+                display: none;
+            }
+            .icerik {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a id="top"></a>
+
+    <div class="ustMenu">
+        <div class="logo">📛 <a href="menu.html">Firma Adı</a></div>
+        <div class="sagMenu"><a href="menu.html">Ana Sayfa</a> | Ürünler | Arama | Hakkında</div>
+    </div>
+
+    <div class="tostIcon">➕
+        <div class="yanMenu"><a href="menu.html">Ana Sayfa</a> <br> Ürünler <br> Arama <br> Hakkında</div>
+    </div>
+
+    <div class="icerik">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt esse architecto at animi, quibusdam doloremque sunt natus beatae, ab nulla, blanditiis enim veritatis nisi iste rerum? Blanditiis reiciendis fugiat expedita. Recusandae facere odit, ea
+        impedit eligendi suscipit nobis aperiam quasi repellat debitis unde itaque ad! Iusto, pariatur eius ex vel sit qui porro quos voluptatum saepe perferendis recusandae harum nemo. Enim consequuntur voluptate dolorem voluptates accusantium recusandae
+        commodi, distinctio voluptatem numquam ipsum iusto obcaecati repellat veritatis magnam labore. Ut neque vel accusantium ratione. Placeat praesentium consequatur quos, eum vel ipsam. Eligendi quam quasi, assumenda laboriosam qui neque dolorum ipsam
+        voluptatum itaque asperiores? Tempore odio, nam corporis cumque repellendus amet eos illum ipsum minus modi ea neque corrupti, voluptatem, error ipsa. Perferendis, unde provident dolorum reiciendis voluptate deleniti quisquam dicta mollitia! Repellat
+        excepturi at consectetur sequi quidem in quae dolor maxime molestias tempore natus quasi debitis, eligendi corporis, ipsam molestiae dignissimos? Voluptas nihil ea rerum sapiente beatae enim voluptate aliquid consequatur, sunt cupiditate voluptatum
+        quis recusandae! Nesciunt, deleniti adipisci. Eum dolorum labore blanditiis dolorem quas repellat illo? Odit porro ea esse.</div>
+
+    <div class="yardimEt">Destek Almak için ❓</div>
+    <div class="yukariGit"><a href="#top">🔺</a></div>
+</body>
+
+</html>

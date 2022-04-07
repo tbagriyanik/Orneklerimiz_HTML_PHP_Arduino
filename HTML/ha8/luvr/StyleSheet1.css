@@ -1,0 +1,63 @@
+﻿body {
+    background-image: url("bg.jpg");
+    background-repeat: repeat-x;
+    background-color: #c3a476;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.kapsar {
+    width: 800px;
+    border: 1px solid #c3a476;
+    margin: auto;
+    background-color: whitesmoke;
+}
+
+.banner {
+    width: 800px;
+    height: 273px;
+    background-image: url("banner.jpg");
+}
+
+.menu {
+    background-image: url("bgc.jpg");
+    background-repeat: repeat-x;
+}
+
+    .menu a {
+        width: 100px;
+        height: 30px;
+        color: #c3a476;
+        text-align: center;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+        .menu a:hover {
+            background-color: #c3a476;
+            color: black;
+        }
+
+.icerik {
+    padding: 50px;
+    
+}
+
+.yazi {
+    float: left;
+    width: 350px;
+    margin-right:50px;
+}
+
+.temizle {
+    clear: both;
+}
+
+.resim {
+    background-image: url("Musee.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 200px;
+    float: right;
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(60%, transparent), to(rgba(250, 250, 250, 0.7)));
+}
